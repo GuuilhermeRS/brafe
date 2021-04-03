@@ -1,19 +1,33 @@
-/* 
-  Breakpoints
-  960
-  740  
-*/
-
-
-/* Reset */
-body, h1, h2, h3, p, ul {
-  padding: 0;
-  margin: 0;
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  padding: 0px;
+  margin: 0px;
 }
 
 body {
   font-family: Georgia, serif;
   color: #252525;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 739px) {
+  .container {
+    flex-direction: column;
+    max-width: 300px;
+  }
 }
 
 /* Menu */
@@ -23,65 +37,58 @@ body {
   padding: 20px 0;
 }
 
-.menu-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/* clear-fix */ 
-.menu-container::after, .menu-container::before {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-a.menu-logo {
-  display: block;
-  float: left;
-  margin-left: 10px;
-}
-
-.menu-nav {
-  float: right;
-  margin-right: 10px;
-}
-
-.menu-nav li{
-  display: inline-block;
-}
-
 .menu-nav a {
-  display: block;
-  padding: 10px;
   text-decoration: none;
   color: #fff;
   font-size: 1.125em;
 }
 
-@media (max-width: 739px) { /* o que for abaixo de 739 terá estes estilos*/
-  .menu {
-    text-align: center;
-  }
+.menu-logo {
+  margin: 0 10px;
+}
 
-  a.menu-logo {
-    float: none;
-    margin: 0 auto;
+.menu-nav {
+  flex: 1;
+  margin: 0 10px;
+  align-self: center;
+}
+
+.menu-nav ul {
+  float: right;
+  display: flex;
+  list-style: none;
+}
+
+.menu-nav ul li a {
+  padding: 10px;
+}
+
+@media (max-width: 739px) {
+  .menu-nav {
+    margin: 0;
   }
-  
-  .menu-nav{
-    float: none;
-    clear: both;
+  .menu-logo {
+    margin: 0;
+  }
+  .menu-nav ul li a {
+    padding-left: 0;
   }
 }
 
-/* Introdução */
+/* Intro */
 
 .intro {
-  background: url('../img/bg-intro.jpg') no-repeat center center;
-  background-size: cover; /* sempre esteja 100% */
+  background: url("../img/bg-intro.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
   padding: 150px 0;
   text-align: center;
-  color: #fff;
+}
+
+@media (max-width: 739px) {
+  .intro {
+    padding: 60px 0;
+  }
 }
 
 .intro h1 {
@@ -90,7 +97,7 @@ a.menu-logo {
 }
 
 .intro h1::after {
-  content: '';
+  content: "";
   display: block;
   width: 20px;
   height: 4px;
@@ -103,132 +110,88 @@ a.menu-logo {
   font-size: 1.125em;
 }
 
-@media (max-width: 739px) { 
-  .intro {
-    padding: 60px 0 ;
-  }
-}
-
 /* Sobre */
 
 .sobre {
   padding: 60px 0;
 }
 
-.sobre-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.sobre-container::after, .sobre-container::before {
-  content: '';
-  display: table;
-  clear: both;
-}
-
 .sobre h2 {
-  text-align: center;
   font-size: 2.25em;
+  text-align: center;
   margin-bottom: 60px;
 }
 
 .sobre-item {
-  width: 460px;
-  float: left;
+  flex: 1;
   margin: 0 10px;
+}
+
+@media (max-width: 739px) {
+  .sobre-item {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 .sobre-item img {
   display: block;
-  max-width: 100%; /* utilizado para dar certa responsividade */
+  max-width: 100%;
 }
 
 .sobre-item h3 {
   font-size: 2.25em;
   line-height: 1em;
-  background-color: #252525;
-  width: 220px;
+  background: #252525;
   color: #fff;
   font-style: italic;
   font-weight: normal;
   text-align: center;
+  position: relative;
+  width: 220px;
   padding: 5px 0 10px 0;
-  top: -25px; /* faz com que o h3 fique com uma parte acima da imagem */
-  position: relative; /* temos que alterar o position para que seja possivel alterar o top, left, rigth e bottom */
+  top: -25px;
 }
 
-.sobre > p { /* somente o p que está diretamente ligado ao .sobre */
+.sobre > p {
   font-size: 1.125em;
-  line-height: 1.4em; /* valor ideal */
+  line-height: 1.4em;
   font-style: italic;
-  text-align: center;
   margin: 20px auto;
   max-width: 460px;
-}
-
-@media (min-width: 740px) and (max-width: 980px) {
-  .sobre-container {
-    max-width: 720px;
-
-  }
-  
-  .sobre-item {
-    width: 340px;
-  }
-}
-
-@media (max-width: 739px) {
-  .sobre-container {
-    max-width: 300px;
-  }
-  .sobre-item{
-    width: 300px;
-    margin: 0 auto;
-  }
+  text-align: center;
 }
 
 /* Produtos */
 
 .produtos {
   background: #e7e4d8;
-  padding: 60px 0;
   border-top: 3px solid #d6d3c8;
   border-bottom: 3px solid #d6d3c8;
-}
-
-.produtos-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.produtos-container::after, .produtos-container::before {
-  content: '';
-  display: table;
-  clear: both;
+  padding: 60px 0;
 }
 
 .produtos-item {
-  width: 300px;
-  float: left;
-  margin: 0 10px 20px 10px;
+  flex: 1;
+  margin: 0 10px 40px 10px;
 }
 
 .produtos-item h2 {
-  text-align: center;
   font-size: 2.25em;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.produtos-item h2::before{
-  content: '';
+.produtos-item h2::before {
+  content: "";
   display: block;
   width: 100px;
   height: 100px;
-  background: currentColor; /* utilizado para pegar a mesma cor que passaremos na classe com cada uma cor de produtos */
+  background: currentColor;
   border-radius: 50%;
-  margin: 20px auto;
   border: 5px solid #e7e4d8;
-  box-shadow: 0 0 0 10px currentColor;
+  box-shadow: 0 0 0 5px currentColor;
+  margin: 20px auto;
 }
 
 h2.produtos-paulista::before {
@@ -249,69 +212,45 @@ h2.produtos-mineiro::before {
 }
 
 .produtos-btn {
-  width: 180px;
-  border: 3px solid;
+  border: 3px solid #252525;
   color: #252525;
   text-decoration: none;
-  display: block;
+  text-align: center;
   font-size: 1.125em;
   font-weight: bold;
   text-transform: uppercase;
-  text-align: center;
+  display: block;
+  width: 180px;
   padding: 15px 0;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
 }
 
-@media (min-width: 740px) and (max-width: 980px) {
-  .produtos-container {
-    max-width: 720px;
-
-  }
-  
+@media (max-width: 739px) {
   .produtos-item {
-    width: 220px;
-  }
-}
-
-@media (max-width: 739px){
-  .produtos-container {
-    max-width: 300px;
-  }
-  .produtos-item{
-    margin: 0 auto 20px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
 /* Locais */
 
 .locais {
-  max-width: 960px;
-  margin: 0 auto;
   padding: 60px 0;
 }
 
 .locais-item {
-  clear: both;
-  margin: 60px auto;
+  margin-bottom: 40px;
 }
 
-.locais-item::after, .locais-item::before {
-  display: table;
-  content: '';
-  clear: both;
-}
-
-.locais-item img {
-  width: 460px;
-  display: block;
-  float: left;
-  margin: 0 10px;  
-}
-
-.locais-item > div {
-  width: 460px;
-  float: left;
+.locais-img,
+.locais-info {
+  flex: 1;
   margin: 0 10px;
+}
+
+.locais-img img {
+  display: block;
+  max-width: 100%;
 }
 
 .locais-item h2 {
@@ -335,26 +274,11 @@ h2.produtos-mineiro::before {
   padding: 10px 20px;
 }
 
-@media (min-width: 740px) and (max-width: 980px) {
-  .locais {
-    max-width: 720px;
-  }
-
-  .locais-item > div, .locais-item img {
-    max-width: 340px;
-  }
-
-}
-
 @media (max-width: 739px) {
-
-  .locais {
-    max-width: 300px;
-  }
-
-  .locais-item > div, .locais-item img {
-    max-width: 300px;
-    margin: 0px;
+  .locais-img,
+  .locais-info {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
@@ -365,21 +289,9 @@ h2.produtos-mineiro::before {
   padding: 30px 0;
 }
 
-.assine-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.assine-container::after, .assine-container::before {
-  content: '';
-  display: table;
-  clear: both;
-}
-
 .assine-info {
-  width: 460px;
+  flex: 1;
   margin: 0 10px;
-  float: left;
 }
 
 .assine-info h2 {
@@ -392,103 +304,71 @@ h2.produtos-mineiro::before {
 }
 
 .assine form {
-  width: 460px;
-  margin: 10px 10px 0 20px;
-  float: left;
+  flex: 1;
+  margin: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .assine form label {
   display: none;
 }
 
+@media (max-width: 739px) {
+  .assine-info {
+    margin: 0 0 40px 0;
+  }
+  .assine-form {
+    margin: 0px;
+  }
+}
+
 .assine input {
-  box-sizing: border-box; /* define que o width que informamos contém o tamanho para padding, margin e border */
-  width: 320px;
+  flex: 1;
+  align-self: flex-start;
+  padding: 10px;
   border: 3px solid #252525;
   background: none;
   font-size: 1.5em;
   font-style: italic;
   font-family: Georgia, serif;
-  padding: 10px;
-  float: left;
 }
 
 .assine button {
+  flex: 1;
+  padding: 13px;
+  align-self: flex-start;
   background: #252525;
   border: none;
   font-family: Georgia, serif;
   text-transform: uppercase;
   font-size: 1.5em;
-  width: 140px;
-  padding: 13px 0;
   color: #fff;
   cursor: pointer;
 }
 
-@media (min-width: 740px) and (max-width: 980px) {
-  .assine-container {
-    max-width: 720px;
-  }
+/*Footer*/
 
-  .assine-info, .assine form, .assine input {
-    width: 340px;
-  }
-}
-
-@media (max-width: 739px) {
-  .assine-container: {
-    max-width: 300px;
-  }
-
-  .assine-info, .assine form, .assine input {
-    width: 300px;
-    margin: 10px 0 0;
-  }
-
-}
-
-/* Footer */
-
-.footer{
+.footer {
   background: #d6d3c8;
   padding: 40px 0;
 }
 
-.footer-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.footer-container::after, .footer-container::before {
-  content: '';
-  display: table;
-  clear: both;
-}
-
 .footer p {
-  float: left;
-  margin: 0 10px;
   font-size: 1.125em;
   line-height: 1.4em;
+  margin: 0 10px;
+  flex: 1;
 }
 
-.footer img {
-  float: right;
+.footer-img {
   margin: 0 10px;
-  display: block;
 }
 
 @media (max-width: 739px) {
-  .footer-container {
-    max-width: 300px;
-  }
-
+  .footer-img,
   .footer p {
-    float: none;
-    margin: 0;
-  }
-
-  .footer img {
-    margin: 10px 0;
+    margin: 10px 0px;
   }
 }

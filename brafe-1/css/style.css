@@ -4,9 +4,13 @@
   740  
 */
 
-
 /* Reset */
-body, h1, h2, h3, p, ul {
+body,
+h1,
+h2,
+h3,
+p,
+ul {
   padding: 0;
   margin: 0;
 }
@@ -28,9 +32,10 @@ body {
   margin: 0 auto;
 }
 
-/* clear-fix */ 
-.menu-container::after, .menu-container::before {
-  content: '';
+/* clear-fix */
+.menu-container::after,
+.menu-container::before {
+  content: "";
   display: table;
   clear: both;
 }
@@ -46,7 +51,7 @@ a.menu-logo {
   margin-right: 10px;
 }
 
-.menu-nav li{
+.menu-nav li {
   display: inline-block;
 }
 
@@ -58,7 +63,8 @@ a.menu-logo {
   font-size: 1.125em;
 }
 
-@media (max-width: 739px) { /* o que for abaixo de 739 terá estes estilos*/
+@media (max-width: 739px) {
+  /* o que for abaixo de 739 terá estes estilos*/
   .menu {
     text-align: center;
   }
@@ -67,8 +73,8 @@ a.menu-logo {
     float: none;
     margin: 0 auto;
   }
-  
-  .menu-nav{
+
+  .menu-nav {
     float: none;
     clear: both;
   }
@@ -77,7 +83,7 @@ a.menu-logo {
 /* Introdução */
 
 .intro {
-  background: url('../img/bg-intro.jpg') no-repeat center center;
+  background: url("../img/bg-intro.jpg") no-repeat center center;
   background-size: cover; /* sempre esteja 100% */
   padding: 150px 0;
   text-align: center;
@@ -90,7 +96,7 @@ a.menu-logo {
 }
 
 .intro h1::after {
-  content: '';
+  content: "";
   display: block;
   width: 20px;
   height: 4px;
@@ -103,9 +109,9 @@ a.menu-logo {
   font-size: 1.125em;
 }
 
-@media (max-width: 739px) { 
+@media (max-width: 739px) {
   .intro {
-    padding: 60px 0 ;
+    padding: 60px 0;
   }
 }
 
@@ -120,8 +126,9 @@ a.menu-logo {
   margin: 0 auto;
 }
 
-.sobre-container::after, .sobre-container::before {
-  content: '';
+.sobre-container::after,
+.sobre-container::before {
+  content: "";
   display: table;
   clear: both;
 }
@@ -157,7 +164,8 @@ a.menu-logo {
   position: relative; /* temos que alterar o position para que seja possivel alterar o top, left, rigth e bottom */
 }
 
-.sobre > p { /* somente o p que está diretamente ligado ao .sobre */
+.sobre > p {
+  /* somente o p que está diretamente ligado ao .sobre */
   font-size: 1.125em;
   line-height: 1.4em; /* valor ideal */
   font-style: italic;
@@ -169,9 +177,8 @@ a.menu-logo {
 @media (min-width: 740px) and (max-width: 980px) {
   .sobre-container {
     max-width: 720px;
-
   }
-  
+
   .sobre-item {
     width: 340px;
   }
@@ -181,7 +188,7 @@ a.menu-logo {
   .sobre-container {
     max-width: 300px;
   }
-  .sobre-item{
+  .sobre-item {
     width: 300px;
     margin: 0 auto;
   }
@@ -201,8 +208,9 @@ a.menu-logo {
   margin: 0 auto;
 }
 
-.produtos-container::after, .produtos-container::before {
-  content: '';
+.produtos-container::after,
+.produtos-container::before {
+  content: "";
   display: table;
   clear: both;
 }
@@ -219,8 +227,8 @@ a.menu-logo {
   margin-bottom: 20px;
 }
 
-.produtos-item h2::before{
-  content: '';
+.produtos-item h2::before {
+  content: "";
   display: block;
   width: 100px;
   height: 100px;
@@ -265,19 +273,18 @@ h2.produtos-mineiro::before {
 @media (min-width: 740px) and (max-width: 980px) {
   .produtos-container {
     max-width: 720px;
-
   }
-  
+
   .produtos-item {
     width: 220px;
   }
 }
 
-@media (max-width: 739px){
+@media (max-width: 739px) {
   .produtos-container {
     max-width: 300px;
   }
-  .produtos-item{
+  .produtos-item {
     margin: 0 auto 20px;
   }
 }
@@ -295,9 +302,10 @@ h2.produtos-mineiro::before {
   margin: 60px auto;
 }
 
-.locais-item::after, .locais-item::before {
+.locais-item::after,
+.locais-item::before {
   display: table;
-  content: '';
+  content: "";
   clear: both;
 }
 
@@ -305,7 +313,7 @@ h2.produtos-mineiro::before {
   width: 460px;
   display: block;
   float: left;
-  margin: 0 10px;  
+  margin: 0 10px;
 }
 
 .locais-item > div {
@@ -340,19 +348,19 @@ h2.produtos-mineiro::before {
     max-width: 720px;
   }
 
-  .locais-item > div, .locais-item img {
+  .locais-item > div,
+  .locais-item img {
     max-width: 340px;
   }
-
 }
 
 @media (max-width: 739px) {
-
   .locais {
     max-width: 300px;
   }
 
-  .locais-item > div, .locais-item img {
+  .locais-item > div,
+  .locais-item img {
     max-width: 300px;
     margin: 0px;
   }
@@ -370,8 +378,9 @@ h2.produtos-mineiro::before {
   margin: 0 auto;
 }
 
-.assine-container::after, .assine-container::before {
-  content: '';
+.assine-container::after,
+.assine-container::before {
+  content: "";
   display: table;
   clear: both;
 }
@@ -430,26 +439,29 @@ h2.produtos-mineiro::before {
     max-width: 720px;
   }
 
-  .assine-info, .assine form, .assine input {
+  .assine-info,
+  .assine form,
+  .assine input {
     width: 340px;
   }
 }
 
 @media (max-width: 739px) {
-  .assine-container: {
+  .assine-container {
     max-width: 300px;
   }
 
-  .assine-info, .assine form, .assine input {
+  .assine-info,
+  .assine form,
+  .assine input {
     width: 300px;
     margin: 10px 0 0;
   }
-
 }
 
 /* Footer */
 
-.footer{
+.footer {
   background: #d6d3c8;
   padding: 40px 0;
 }
@@ -459,8 +471,9 @@ h2.produtos-mineiro::before {
   margin: 0 auto;
 }
 
-.footer-container::after, .footer-container::before {
-  content: '';
+.footer-container::after,
+.footer-container::before {
+  content: "";
   display: table;
   clear: both;
 }
